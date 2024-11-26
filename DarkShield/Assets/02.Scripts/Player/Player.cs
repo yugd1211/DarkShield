@@ -31,11 +31,11 @@ public class Player : MonoBehaviour
             playerMovement.Move(playerInputManager.InputMoveDir);
         }
 
-        //±âº» °ø°İ
+        //ï¿½âº» ï¿½ï¿½ï¿½ï¿½
         if (Input.GetMouseButtonDown(0) == true) isLeftMouseClick = true;
         else isLeftMouseClick = false;
 
-        //½ºÅ³ °ø°İ
+        //ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½
         if (Input.GetMouseButtonDown(1) == true) isRightMouseClick = true;
         else isRightMouseClick = false;
 
@@ -50,8 +50,17 @@ public class Player : MonoBehaviour
         playerInputManager = GetComponent<PlayerInputManager>();
         playerAnimator = GetComponent<Animator>();
     }
+    
+    // ì„ì‹œë¡œ ì„¤ì • í¬íƒˆ ì´ë™
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Portal"))
+        {
+            StageManager.Instance.ChangeStage(StageManager.Instance.currStage.nextStage);
+        }
+    }
 
-    //À¯´ÏÆ¼ ÀÌº¥Æ® ÇÔ¼ö
+    //ï¿½ï¿½ï¿½ï¿½Æ¼ ï¿½Ìºï¿½Æ® ï¿½Ô¼ï¿½
     public void EndDash()
     {
         playerStateMachine.dashState.EndDash();

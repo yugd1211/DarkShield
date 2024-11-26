@@ -23,6 +23,8 @@ public abstract class NormalEnemy : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         _animotor = GetComponent<Animator>();
+        
+        player = GameObject.Find("Player").transform;
     }
 
     //근거리 애너미, 원거리 애너미 클래스로 만들기
