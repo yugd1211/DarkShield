@@ -13,7 +13,7 @@ public class DashState : IState
     public void OnEnter()
     {
         _player.playerMovement.Dash();
-        //대쉬가 호출되고 끝나면 idle로 가게 여기서 트랜지션해줘야 함.
+
         _player.playerAnimator.SetTrigger("Dash");
     }
 
