@@ -1,4 +1,5 @@
 public interface IInteractable
 {
-	public void Interact(Player player);
+	public void Interact(InteractableTmpPlayer player);
+	public bool CanInteract();
 }
