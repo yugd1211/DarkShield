@@ -1,7 +1,7 @@
 using UnityEngine;
 public class AInteractableObeject : MonoBehaviour, IInteractable
 {
-	public virtual void Interact(InteractableTmpPlayer player)
+	public virtual void Interact(Interactor player)
 	{
 		print("Interact");
 		// Player Interact Animation Invoke

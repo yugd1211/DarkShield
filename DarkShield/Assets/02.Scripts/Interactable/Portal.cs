@@ -1,6 +1,6 @@
 public class Portal : AInteractableObeject
 {
-	public override void Interact(InteractableTmpPlayer player)
+	public override void Interact(Interactor player)
 	{
 		StageManager.Instance.currStage.MoveNextStage();
 	}
