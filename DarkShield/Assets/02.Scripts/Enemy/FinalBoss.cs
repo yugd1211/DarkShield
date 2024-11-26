@@ -104,17 +104,6 @@ public class FinalBoss : MonoBehaviour
         }
     }
 
-    /*void RangedAttack()
-    {
-        if (isDashing) return;
-        if (Time.time >= lastAttackTime + attackCooldown)
-        {
-            Debug.Log("원거리 공격!");
-            // 원거리 공격 구현 (투사체 생성 등)
-            StartCoroutine(DashAttack());
-            lastAttackTime = Time.time;
-        }
-    }*/
 
     IEnumerator DashAttack() //대쉬 공격 메서드
     {

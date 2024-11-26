@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class RangedEnemy : NormalEnemy
 {
-    // 원거리
-    //public float rangedAttackRange = 10f; // 원거리 공격 범위
-    // 나도 필요없음 왜필요없을까?
 
     public GameObject projectilePrefab; // 원거리 투사체
     public Transform firePoint; // 투사체 발사 위치
@@ -21,12 +18,6 @@ public class RangedEnemy : NormalEnemy
 
     public override void Attack()
     {
-        /*float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-        if (distanceToPlayer <= rangedAttackRange && Time.time >= lastAttackTime + attackCooldown)
-        {
-            RangedAttack();
-            lastAttackTime = Time.time;
-        }*/
         if(isCheckPlayer())
         {
             RangedAttack();

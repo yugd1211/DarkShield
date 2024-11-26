@@ -14,12 +14,6 @@ public class MelleEnemy : NormalEnemy
 
     public override void Attack()
     {
-        /*float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-        if (distanceToPlayer <= meleeRange && Time.time >= lastAttackTime + attackCooldown)
-        {
-            MeleeAttack();
-            lastAttackTime = Time.time;
-        }*/
         if(isCheckPlayer())
         {
             MeleeAttack();
