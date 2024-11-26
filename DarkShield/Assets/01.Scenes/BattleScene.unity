@@ -23661,7 +23661,7 @@ GameObject:
   - component: {fileID: 1447975849}
   - component: {fileID: 1447975848}
   - component: {fileID: 1447975847}
-  - component: {fileID: 1447975850}
+  - component: {fileID: 1447975851}
   m_Layer: 0
   m_Name: NextStagePotal
   m_TagString: Portal
@@ -23755,7 +23755,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1447975845}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1447975850
+--- !u!114 &1447975851
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -23764,7 +23764,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1447975845}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eca6475b797fe454a8bf6dc3d75822fc, type: 3}
+  m_Script: {fileID: 11500000, guid: c140d64a582e10b4187e4f583f71f4ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1452115347
