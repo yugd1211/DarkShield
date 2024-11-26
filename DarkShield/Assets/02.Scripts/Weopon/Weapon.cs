@@ -5,11 +5,10 @@ using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
 {
-    public float damage;
-    public float normalAttackInterval;
-    public float skillAttackInterval;
-    public bool isAttack;
+	public float damage;
+	public float slashAttackInterval;
+	public float skillAttackInterval;
 
-    public abstract bool CanNormalAttack();
-    public abstract bool CanSkillAttack();
+	public abstract void SlashAttack();
+	public abstract void SkillAttack();
 }

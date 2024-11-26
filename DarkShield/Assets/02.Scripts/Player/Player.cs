@@ -5,69 +5,63 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-    public Weapon _curWeopon;
-    public StateMachine playerStateMachine;
-    public PlayerMovement playerMovement;
-    public PlayerInputManager playerInputManager;
-    public Animator playerAnimator;
+	public Weapon _curWeopon;
+	public StateMachine playerStateMachine;
+	public PlayerMovement playerMovement;
+	public PlayerInputManager playerInputManager;
+	public Animator playerAnimator;
 
-    public bool isLeftMouseClick;
-    public bool isRightMouseClick;
+	private void Awake()
+	{
+		Init();
+	}
 
-    private void Awake()
-    {
-        Init();
-    }
+	private void Start()
+	{
+		playerStateMachine.Init(playerStateMachine.idleState);
+	}
 
-    private void Start()
-    {
-        playerStateMachine.Init(playerStateMachine.idleState);
-    }
+	private void Update()
+	{
+		if (playerStateMachine.CurState != playerStateMachine.attackState && playerStateMachine.CurState != playerStateMachine.dashState)
+		{
+			playerMovement.Move(playerInputManager.InputMoveDir);
+		}
+		playerStateMachine.OnUpdate();
+	}
 
-    private void Update()
-    {
-        if (playerStateMachine.CurState != playerStateMachine.attackState && playerStateMachine.CurState != playerStateMachine.dashState)
-        {
-            playerMovement.Move(playerInputManager.InputMoveDir);
-        }
+	private void Init()
+	{
+		_curWeopon = GetComponentInChildren<Weapon>();
+		playerStateMachine = new StateMachine(this);
+		playerMovement = GetComponent<PlayerMovement>();
+		playerInputManager = GetComponent<PlayerInputManager>();
+		playerAnimator = GetComponent<Animator>();
+	}
 
-        //�⺻ ����
-        if (Input.GetMouseButtonDown(0) == true) isLeftMouseClick = true;
-        else isLeftMouseClick = false;
+	// 임시로 설정 포탈 이동
+	private void OnCollisionEnter(Collision other)
+	{
+		if (other.gameObject.CompareTag("Portal"))
+		{
+			StageManager.Instance.ChangeStage(StageManager.Instance.currStage.nextStage);
+		}
+	}
 
-        //��ų ����
-        if (Input.GetMouseButtonDown(1) == true) isRightMouseClick = true;
-        else isRightMouseClick = false;
+	#region 애니메이션 이벤트 함수
+	public void EndDash()
+	{
+		playerStateMachine.dashState.EndDash();
+	}
 
-        playerStateMachine.OnUpdate();
-    }
+	public void EndSlashAttack()
+	{
+		playerStateMachine.attackState.EndAttack();
+	}
 
-    private void Init()
-    {
-        _curWeopon = GetComponentInChildren<Weapon>();
-        playerStateMachine = new StateMachine(this);
-        playerMovement = GetComponent<PlayerMovement>();
-        playerInputManager = GetComponent<PlayerInputManager>();
-        playerAnimator = GetComponent<Animator>();
-    }
-    
-    // 임시로 설정 포탈 이동
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("Portal"))
-        {
-            StageManager.Instance.ChangeStage(StageManager.Instance.currStage.nextStage);
-        }
-    }
-
-    //����Ƽ �̺�Ʈ �Լ�
-    public void EndDash()
-    {
-        playerStateMachine.dashState.EndDash();
-    }
-
-    public void EndAttack()
-    {
-        playerStateMachine.attackState.EndAttack();
-    }
+	public void EndSkillAttack()
+	{
+		//playerStateMachine.skillState.EndSkillAttack(); //구현 해야 함.
+	}
+	#endregion
 }
