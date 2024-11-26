@@ -9451,6 +9451,7 @@ GameObject:
   - component: {fileID: 679841026}
   - component: {fileID: 679841025}
   - component: {fileID: 679841024}
+  - component: {fileID: 679841027}
   m_Layer: 0
   m_Name: NextStagePotal
   m_TagString: Portal
@@ -9544,6 +9545,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 679841022}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &679841027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679841022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c140d64a582e10b4187e4f583f71f4ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &681051538
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33045,6 +33058,7 @@ GameObject:
   - component: {fileID: 2054623820}
   - component: {fileID: 2054623819}
   - component: {fileID: 2054623818}
+  - component: {fileID: 2054623821}
   m_Layer: 0
   m_Name: NextStagePotal
   m_TagString: Portal
@@ -33138,6 +33152,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2054623816}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2054623821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054623816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c140d64a582e10b4187e4f583f71f4ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2058042403
 GameObject:
   m_ObjectHideFlags: 0

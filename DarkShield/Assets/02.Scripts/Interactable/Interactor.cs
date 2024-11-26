@@ -1,11 +1,9 @@
 	using System.Linq;
 using UnityEngine;
 using Context = UnityEngine.InputSystem.InputAction.CallbackContext;
-public class InteractableTmpPlayer : MonoBehaviour
+public class Interactor : MonoBehaviour
 {
 	public float detectionRadius = 2f;
-	// InteractableObject를 감지하는 역할도 임시로 부여
-	// 해당 객체를 그냥 따로 두는 것도 좋을듯함
 	
 	public void OnInteract(Context context)
 	{
