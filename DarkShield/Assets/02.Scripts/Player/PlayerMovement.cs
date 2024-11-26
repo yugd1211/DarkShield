@@ -36,9 +36,9 @@ public class PlayerMovement : MonoBehaviour
     }
     private IEnumerator DashCoroutine()
     {
-        _agent.isStopped = true; // NavMeshAgent µ¿ÀÛ ÁßÁö
+        _agent.isStopped = true; // NavMeshAgent ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-        Vector3 dashDirection = transform.forward; // ÇöÀç º¸´Â ¹æÇâÀ¸·Î ´ë½Ã
+        Vector3 dashDirection = transform.forward; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
         float elapsedTime = 0f;
 
         while (elapsedTime < dashInterval)
@@ -48,12 +48,17 @@ public class PlayerMovement : MonoBehaviour
             yield return null;
         }
 
-        _agent.isStopped = false; // NavMeshAgent ´Ù½Ã È°¼ºÈ­
+        _agent.isStopped = false; // NavMeshAgent ï¿½Ù½ï¿½ È°ï¿½ï¿½È­
     }
 
     private void Init()
     {
         _player = GetComponent<Player>();
         _agent = GetComponent<NavMeshAgent>();
+    }
+
+    public void Spawn(Vector3 position)
+    {
+        _agent.Warp(position);
     }
 }
