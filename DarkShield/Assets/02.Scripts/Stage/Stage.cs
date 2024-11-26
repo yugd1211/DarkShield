@@ -4,20 +4,23 @@ public class Stage : MonoBehaviour
 {
 	// 해당 객체들 구현 될 시 GameObject -> 해당 객체로 변경
 	public GameObject player;
-	public GameObject StageManager;
+	public StageManager stageManager;
 	//
 	public Stage nextStage;
 	public Transform playerStartPos;
 
-	private void Start()
-	{
-		Init();
-	}
 
-	public virtual void Init()
+	public virtual void Init(StageManager stageManager)
 	{
-		playerStartPos = GameObject.Find("PlayerStartPosition").transform;
+		this.stageManager = stageManager;
+		player = stageManager.player;
+		playerStartPos = transform.Find("PlayerStartPosition").transform;
 		if (player == true && playerStartPos == true)
 			player.transform.position = playerStartPos.position;
+	}
+	
+	public void MoveNextStage()
+	{
+		stageManager.ChangeStage(nextStage);
 	}
 }
